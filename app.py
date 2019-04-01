@@ -7,7 +7,8 @@ In {}, I'm going to create a file named {}, write whatever you'd like to it, and
 The file will have a maximum of three lines. 
 Ready to get started?""".format(script, filename))
 
-target = open(filename, "w+")
+target = open(filename, "w")
+target.truncate()
 line1 = input("Write the first line here: ")
 line2 = input("Write the second line here: ")
 line3 = input("Write the third line here: ")
@@ -20,9 +21,9 @@ print("Now running the file\n\n")
 readable = open(filename)
 
 if filename.endswith('.py'): 
-    os.system(f"sudo python3 {filename}")
+    os.system("sudo python3 {}".format(filename))
 elif filename.endswith('.js'):
-    os.system(f"sudo node {filename}")
+    os.system("sudo node {}".format(filename))
 else:
     print(readable.read())
 
