@@ -20,9 +20,9 @@ print("Now running the file\n\n")
 
 readable = open(filename)
 
-if ".py" in filename: 
+if filename.endswith('.py'): 
     os.system(f"sudo python3 {filename}")
-elif ".js" in filename:
+elif filename.endswith('.js'):
     os.system(f"sudo node {filename}")
 else:
     print(readable.read())
